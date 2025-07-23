@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+/*
+    Text Stylesheet for the final project of IS 218
+    Author: Peter Gilbert
+    Date: 01/29/2025
+
+    Filename: theStylesheet.css
+
+*/
+
+@media only screen and (min-width:0px) and (max-width:999px){/*This query is for when the screen size is smaller than intended. This would affect the user's ability to see everything, so the layout and sidebar is adjusted to fix this issue*/
+
+    body { /*This is used to reorient all of the parts of the webpage into one column since the screen is smaller*/
+        grid-template-areas: "sidebar"
+                             "content"
+                             "footer";
+        grid-template-rows: 100px 1fr 50px;
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar{ /*This code changes the properties of the sidebar to take away the animation it had when on full screen and personalizing it to ho I want it in its horizontal position*/
+        width: 100%;
+        height: 100px;
+        transition:none;
+        box-shadow:none;
+        backdrop-filter:unset;
+        padding-left:0;
+        border-bottom: 1px solid black;
+    }
+
+    .sidebar-content{/*This makes sure that the sidebar options stay in one row to go across the top of the screen instead of a column*/
+        flex-flow: row nowrap;
+    }
+
+    .sidebar-content li span{ /*This makes the content inside of the sidebar display as blocks*/
+        display:block;
+    }
+
+    .sidebar:hover{/*This ensures that the sidebar doesn't transition like it had at full screen*/
+        width:100%;
+    }
+}

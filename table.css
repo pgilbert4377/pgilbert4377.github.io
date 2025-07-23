@@ -1,0 +1,109 @@
+.sidebar{/*Keeps the sidebar on the left the whole way down the page, more important for when the page is smaller and the table gains more rows*/
+    position: fixed;
+}
+
+dt img {/*Readjusts image elemetn sizing to fit in the boxes better*/
+    width: 15em;
+    max-width: 300px;
+    height: 15em;
+}
+
+dd {/*The text inside of the dt is reversed, so this styles the outline of that text*/
+    text-shadow: -.03em -.03em 0 white,
+                 -.03em .03em 0 white,
+                 .03em .03em 0 white,
+                 .03em -.03em 0 white;
+}
+
+dd a { /*This styles the titles of the foods so that they look like normal text as opposed to hyperlinks*/
+    text-decoration:none;
+    font-size: large;
+    margin: auto;
+    padding: 25px;
+}
+
+section a{ /*Centers all of the anchor elements within the section element*/
+    justify-content: center;
+}
+
+.grid-item { /*Sets up the items in the table for the grid styling and makes it look pretty*/
+    display: grid;
+    border: 2px solid black;
+    background-color:#A7CCED;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 auto;
+}
+.grid-container { /*Sets the table as a grid and creates the columns for when window is full screen*/
+    border: 3px solid black;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+    padding: 20px;
+    background-color:#63ADF2;
+    margin: auto 100px;
+}
+
+
+@media only screen and (min-width:1000px) and (max-width:1450px){ /*Changes the column amount as the screen gets thinner*/
+    .grid-container{
+        grid-template-columns: repeat(2,1fr);
+        padding: 5px;
+        margin:auto 200px;
+    }
+}
+
+@media only screen and (min-width:0px) and (max-width:999px){
+    .grid-container{
+        grid-template-columns: 1fr;
+        padding: 5px;
+        margin: auto 300px;
+    }
+}
+
+@media only screen and (min-width:0px) and (max-width:1449px){/*This query is for when the screen size is smaller than intended. This would affect the user's ability to see everything, so the layout and sidebar is adjusted to fix this issue*/
+
+    body { /*This is used to reorient all of the parts of the webpage into one column since the screen is smaller*/
+        grid-template-areas: "sidebar"
+                             "content"
+                             "footer";
+        grid-template-rows: 100px 1fr 50px;
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar{ /*This code changes the properties of the sidebar to take away the animation it had when on full screen and personalizing it to ho I want it in its horizontal position*/
+        width: 100%;
+        height: 100px;
+        transition:none;
+        box-shadow:none;
+        backdrop-filter:unset;
+        padding-left:0;
+        border-bottom: 1px solid black;
+    }
+
+    .sidebar-content{/*This makes sure that the sidebar options stay in one row to go across the top of the screen instead of a column*/
+        flex-flow: row nowrap;
+    }
+
+    .sidebar-content li span{ /*This makes the content inside of the sidebar display as blocks*/
+        display:block;
+    }
+
+    .sidebar:hover{/*This ensures that the sidebar doesn't transition like it had at full screen*/
+        width:100%;
+    }
+}
+
+label{
+    color: white;
+    text-shadow: -.02em -.02em 0 #304D6D,
+                  -.02em .02em 0 #304D6D,
+                   .02em .02em 0 #304D6D,
+                  .02em -.02em 0 #304D6D;
+}
+
+.buttons{
+    justify-content: center;
+}

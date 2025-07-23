@@ -1,0 +1,280 @@
+@charset "utf-8";
+
+/*
+
+    Layout Stylesheet for the final project of IS 218
+    Author: Peter Gilbert
+    Date: 01/29/2025
+
+    Filename: theLayout.css
+
+*/
+* { /*Sets the boundaries for everything*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{/*Sets a consistent style for the html files throughout*/
+    background-color:#82A0BC;
+    padding-left:0;
+    margin: 0;
+    width: 100%;
+}
+
+nav {/*Establishes the grid area of nav for layout purposes*/
+    grid-area: nav;
+}
+
+body {/*Establishes the layout for the page*/
+    display: grid;
+    width: 100%;
+    grid-template-areas: "sidebar content content"
+                         "sidebar content content"
+                         "sidebar footer footer";
+    grid-template-columns: 100px 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+h1{ /*This is used to make sure that the h1 elements have a consistent font style with outline*/
+    padding-top: 25px;
+    text-align: center;
+    color: white;
+    text-shadow: -.02em -.02em 0 #304D6D,
+                  -.02em .02em 0 #304D6D,
+                   .02em .02em 0 #304D6D,
+                  .02em -.02em 0 #304D6D;
+}
+
+section > p{/*This is also used to style font, but since sizing of text is different, so are the outline adjustments*/
+    color: white;
+    text-shadow: -.03em -.03em 0 #304D6D,
+                 -.03em .03em 0 #304D6D,
+                 .03em .03em 0 #304D6D,
+                 .03em -.03em 0 #304D6D;
+}
+
+footer{/*Establishes the grid area for the footer element as well as the font style*/
+    grid-area: footer;
+    color: white;
+    text-shadow: -.03em -.03em 0 #304D6D,
+                 -.03em .03em 0 #304D6D,
+                 .03em .03em 0 #304D6D,
+                 .03em -.03em 0 #304D6D;
+}
+
+a{/*Changes the anchor elements to be consistent with the rest of the paragraph font styles*/
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: inherit;
+}
+
+p > a{/*Gets rid of the underline for anchor elements within a paragraph element*/
+    text-decoration: none;
+}
+
+ul{/*Sets the ul elements style and spacing*/
+    display: flex;
+    list-style: none;
+    padding-left: 20px;
+    gap: 15px;
+}
+
+footer {/*Centers the footer element at the bottom of the page*/
+    text-align: center;
+}
+
+p{ /*Sets the basic style for paragraphs*/
+    font-size: large;
+    margin: auto;
+    padding:10px 183px;
+}
+
+img{/*Styles the images throughout the pages*/
+    display:block;
+    margin: 0 auto;
+    width: 100%;
+    object-fit: contain;
+}
+
+h2{ /*Sets the style for h2 elements*/
+    padding-left: 183px;
+    text-align: left;
+}
+
+.ingredients, .ingredients > li > ul{/*This styles the ingredients on the pages as well as makes sure that they are bulleted points*/
+    display:block;
+    list-style: disc;
+}
+.ingredients{
+    padding-left: 200px;
+}
+
+.ingredients>li>ul{
+    padding-left: 25px;
+}
+
+.ingredients li{/*Makes sure that the li elements are closest to the bullet points as possible*/
+    padding: 0;
+    text-align: left;
+}
+
+.individual-pictures {/*Adjusts the sizing of the picture due to them being in a smaller area than the picture can handle*/
+    width: 30%;
+}
+
+.individual-pictures, .grid-container img{/*Applies a black border around the different elements to make the different elements stand out*/
+    border: 2px solid black;
+}
+
+.pages{/*Sets style for text of all of the documents of the pages class*/
+    background-color: #82A0BC;
+    color: white;
+    text-shadow: -.1em -.1em 0 #304D6D,
+                 -.1em .1em 0 #304D6D,
+                 .1em .1em 0 #304D6D,
+                 .1em -.1em 0 #304D6D;
+}
+
+.pages li{/*Sets style for the text of all of the li*/
+    text-shadow: -.05em -.05em 0 #304D6D,
+                  -.05em .05em 0 #304D6D,
+                   .05em .05em 0 #304D6D,
+                  .05em -.05em 0 #304D6D;
+}
+
+.pages h2{/*Sets the text for all of the text of the h2 class*/
+    text-shadow: -.03em -.03em 0 #304D6D,
+                  -.03em .03em 0 #304D6D,
+                   .03em .03em 0 #304D6D,
+                  .03em -.03em 0 #304D6D;
+}
+
+.sidebar{/*Sets the display of the sidebar as well as determines its grid area*/
+    display: grid;
+    grid-area: sidebar;
+    position:fixed;
+}
+
+.page-content{/*Assigns the page-content class to the content grid area and styles it*/
+    grid-area: content;
+    background:none;
+    border:none;
+}
+
+.form-content{/*Centers the form background*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+form{/*Centers the form in the page*/
+    width: 500px;
+    height: 500px;
+    padding: 1rem;
+    text-align: center;
+    border: 2px solid black;
+    background-color:#63ADF2;
+}
+
+form > section > label{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size:large;
+    text-shadow: -.02em -.02em 0 #304D6D,
+                  -.02em .02em 0 #304D6D,
+                   .02em .02em 0 #304D6D,
+                  .02em -.02em 0 #304D6D;
+}
+
+.questions > input, form > input{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid black;
+    border-radius:2px;
+}
+
+input[type="text"]{ /*Sets the bottom border as red until it has content in the text area*/
+    width: 80%;
+    border-bottom:2px solid red;
+    outline: none;
+}
+
+input.filled{
+    border-bottom:2px solid black;
+}
+
+input[type="submit"]{
+    width: 40%;
+    text-shadow: -.03em -.03em 0 white,
+                  -.03em .03em 0 white,
+                   .03em .03em 0 white,
+                  .03em -.03em 0 white;
+}
+
+.questions{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #A7CCED;
+    border-radius: 2px;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    background:#304D6D;
+}
+
+th{
+    background:#82A0BC;
+}
+
+td{
+    background:#A7CCED;
+}
+
+td[data-date*="Apr"]{
+    background-color:darkgrey;
+}
+
+th,td{
+    color: white;
+    border: 1px solid gray;
+    width: 100px;
+    font-size: 1em;
+    padding: 5px;
+    text-shadow: -.02em -.02em 0 #304D6D,
+                  -.02em .02em 0 #304D6D,
+                   .02em .02em 0 #304D6D,
+                  .02em -.02em 0 #304D6D;
+}
+
+caption{
+    color:white;
+    text-shadow: -.02em -.02em 0 #304D6D,
+                  -.02em .02em 0 #304D6D,
+                   .02em .02em 0 #304D6D,
+                  .02em -.02em 0 #304D6D;
+}
+
+.calendarh2{
+    margin-left:auto;
+    margin-right: auto;
+    padding-left:0;
+    font-size:medium;
+    text-align:center;
+    color: white;
+    text-shadow: -.02em -.02em 0 #304D6D,
+                  -.02em .02em 0 #304D6D,
+                   .02em .02em 0 #304D6D,
+                  .02em -.02em 0 #304D6D;
+}
+
+td h1{
+    color:#304D6D;
+    text-shadow: -.02em -.02em 0 white,
+                  -.02em .02em 0 white,
+                   .02em .02em 0 white,
+                  .02em -.02em 0 white;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Peter Gilbert's Website's Home Page</title>
+        <link href="sidebar.css" rel="stylesheet" />
+        <link href="theLayout.css" rel="stylesheet" />
+        <link href="mobileLayout.css" rel="stylesheet" />
+        <link href="form.css" rel="stylesheet" />
+        <script src="form.js" defer></script>
+    </head>
+    <body class="pages">
+        <audio autoplay><source src="Suggestions.m4a" type="audio/mp4"></audio>
+        <nav class="sidebar">
+            <ul class="sidebar-content">
+                <li class="one"><a href="index.html"><img class="symbols-outlined" src="houseIcon.png" alt="My PowerPoint creation #1"><span>Home</span></a></li>
+                <li class="two"><a href="about.html"><img class="symbols-outlined" src="aboutIcon.png" alt="My PowerPoint creation #2"><span>About Me</span></a></li>
+                <li class="three"><a href="food.html"><img class="symbols-outlined" src="foodIcon.png" alt="My PowerPoint creation #3"><span>Food</span></a></li>
+                <li class="four"><a href="suggestions.html"><img class="symbols-outlined" src="suggestionIcon.png" alt="My PowerPoint creation #4"><span>Suggestions</span></a></li>
+            </ul>
+        </nav>
+        <section class="page-content">
+            <h1>What food should I make next?</h1>
+            <section class="form-content" id="form-content">
+                <form>
+                    <br><br>
+                    <section class="questions">
+                        <label for="Fdname">Enter the Food Name</label><br>
+                        <input type="text" id="fdname" name="Fdname" placeholder="Ratatouille"><br><br><br>
+                    </section>
+                    <section class="questions">
+                        <label for="Fname">Enter Your First Name</label><br>
+                        <input type="text" id="fname" name="Fname" placeholder="John"><br><br><br>
+                    </section>
+                    <section class="questions">
+                        <label for="Lname">Enter Your Last Name</label><br>
+                        <input type="text" id="lname" name="Lname" placeholder="Smith"><br><br><br>
+                    </section>
+                    <section class="questions">
+                        <label for="Email">Enter Your Email</label><br>
+                        <input type="text" id="email" name="Email" placeholder="someone@example.com"><br><br><br>
+                    </section>
+                    <input type="submit" value="Submit" />
+                </form>
+            </section>
+        </section>
+        <footer>
+            © 2025 Peter Gilbert
+        </footer>
+    </body>
+</html>

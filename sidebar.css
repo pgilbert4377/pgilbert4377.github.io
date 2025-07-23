@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+body {
+    min-height: 100vh;
+}
+
+.sidebar { /*Styling for the sidebar to make it look nice from top to bottom*/
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    transition: .3s;
+    scrollbar-width: none;
+    overflow: hidden scroll;
+    background: #304D6D;
+    padding: 20px 20px 20px 0;
+    backdrop-filter: blur(5px);
+    box-shadow: 8px 0px 9px 0px #545e75;
+}
+
+.sidebar-content {/*Sets up the sidebar so it can display all of its contents as flex without making multiple columns*/
+    display: flex;
+    flex-flow:column nowrap;
+}
+
+.sidebar:hover {/*Expands the sidebar to show all of the details once the mouse is hovering over it*/
+    width: 260px;
+}
+
+.sidebar:hover li span {/*Sets the li elements within the sidebar to block to show the whole element*/
+    display: block;
+}
+
+.sidebar-content li {/*Sets up the sidebar's transitions and specific dimensions to make it look nice*/
+    display: flex;
+    white-space: nowrap;
+    justify-content:flex-start;
+    align-content:center;
+    list-style: none;
+    transition: .2s;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.sidebar-content li span {/*Hides the words in the sidebar until hovered over*/
+    display: none;
+}
+
+a {/*Styles the anchor elements in the sidebar to be in the center*/
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.symbols-outlined {/*Styles the images within the sidebar*/
+    width: auto;
+    max-width:70px;
+    height: 65px;
+    padding: 10px 0px;
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.sidebar-content li:hover,header li:hover {/*Creates the lighter shading to show which option user is hovering over*/
+    border-radius: 10px;
+    background: #545e75;
+}
+
+.three{/*Adjusts the position of the turkey picture*/
+    transform: translateX(-10px);
+}
+
+.four{
+    transform: translateX(-10px);
+}
+
+.one:hover img{/*These change the image of the option the user is hovering over to make it more fun*/
+    content: url(houseIconHover.png);
+}
+
+.two:hover img {
+    content: url(aboutIconHover.png);
+}
+
+.three:hover img {
+    content: url(foodIconHover.png);
+}
+
+.four:hover img {
+    content: url(suggestionIconHover.png);
+}
+
+.sidebar a {/*Sets the text style for the sidebar*/
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    text-shadow: -1px -1px 0 #304D6D,
+                 -1px 1px 0 #304D6D,
+                 1px 1px 0 #304D6D,
+                 1px -1px 0 #304D6D;
+}
